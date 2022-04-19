@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nagios:
+    build:
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./configuration:/usr/local/nagios/etc/nagios.cfg
+      - ./configuration:/user/local/nagios/etc/ressources.cfg
+      - ./configuration:/user/local/nagios/etc/objects/
+    ports:
+      - 80:80
